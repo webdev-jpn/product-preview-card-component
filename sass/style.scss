@@ -1,0 +1,181 @@
+/*  */
+
+/* Breakpoints */
+$breakpoints: (
+  mobile: 375px,
+  tablet-min: 768px,
+  tablet-max: 1439px,
+  desktop: 1440px,
+);
+
+/* Mixin */
+@mixin mq($device) {
+  @media (min-width: map-get($breakpoints, $device)) {
+    @content;
+  }
+}
+
+@mixin mq-between($min, $max) {
+  @media (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+    @content;
+  }
+}
+
+/* Fonts */
+$font-size-base: 14px;
+$font-base: "Montserrat", sans-serif;
+$font-title: "Fraunces", serif;
+$font-price-current: "Fraunces", serif;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+/* Colors */
+$green: hsl(158, 36%, 37%);
+$dark-green: hsl(158, 42%, 18%);
+$black: hsl(212, 21%, 14%);
+$grey: hsl(228, 12%, 48%);
+$cream: hsl(30, 38%, 92%);
+$white: hsl(0, 0%, 100%);
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-size: 1rem;
+  font-family: $font-base;
+  font-weight: $font-weight-medium;
+  color: $grey;
+}
+
+main {
+  min-height: 100vh;
+  background-color: $cream;
+  padding-top: 5.714rem;
+  padding-bottom: 12.28rem;
+  padding-right: 0.857rem;
+  padding-left: 0.928rem;
+
+  @include mq(desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.card {
+  background-color: $white;
+  max-width: 25rem;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0.571rem;
+
+  @include mq(desktop) {
+    max-width: 42.85rem;
+    display: flex;
+  }
+}
+
+.card__image {
+  border-radius: 0.571rem 0.571rem 0 0;
+  overflow: hidden; // Clip child content to rounded corners
+
+  @include mq(desktop) {
+    border-radius: 0.571rem 0 0 0.571rem;
+    max-width: 21.42rem;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    @include mq(desktop) {
+      height: 100%;
+      object-fit: cover; // Fill container without distortion
+    }
+  }
+}
+
+.card__body {
+  padding: 2.285rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.714rem;
+
+  @include mq(desktop) {
+    max-width: 21.42rem;
+    width: 100%;
+    gap: 2.285rem;
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.714rem;
+}
+
+.card__content-category {
+  font-size: 0.857rem;
+  line-height: 1.2;
+  letter-spacing: 0.357rem;
+}
+
+.card__content-title {
+  font-size: 2.285rem;
+  font-weight: $font-weight-bold;
+  font-family: $font-title;
+  color: $black;
+  line-height: 1;
+}
+
+.card__content-text {
+  line-height: 1.58; // Adjusted from 1.6 for pixel-perfect alignment
+  letter-spacing: 0.01rem; // Slight tweak for visual balance
+}
+
+.card__price {
+  display: flex;
+  gap: 1.142rem;
+  align-items: center;
+}
+
+.card__price-current {
+  font-weight: $font-weight-bold;
+  font-size: 2.285rem;
+  color: $green;
+  font-family: $font-price-current;
+  line-height: 1;
+}
+
+.card__price-old {
+  line-height: 1.2;
+  font-size: 0.928rem;
+  text-decoration: line-through; // Strike-through for old price
+}
+
+.card__button {
+  background-color: $green;
+  width: 100%;
+  padding: 1.142rem 0;
+  border-radius: 0.571rem;
+  display: flex;
+  align-items: center; // Vertically center icon and text
+  justify-content: center; // Center content horizontally
+  gap: 0.571rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $dark-green;
+  }
+
+  img {
+  }
+
+  span {
+    color: $white;
+    font-weight: $font-weight-bold;
+  }
+}
