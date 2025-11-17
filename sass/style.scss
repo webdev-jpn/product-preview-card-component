@@ -1,6 +1,4 @@
-/*  */
-
-/* Breakpoints */
+// Breakpoints
 $breakpoints: (
   mobile: 375px,
   tablet-min: 768px,
@@ -8,7 +6,7 @@ $breakpoints: (
   desktop: 1440px,
 );
 
-/* Mixin */
+// Mixin
 @mixin mq($device) {
   @media (min-width: map-get($breakpoints, $device)) {
     @content;
@@ -21,7 +19,7 @@ $breakpoints: (
   }
 }
 
-/* Fonts */
+// Fonts
 $font-size-base: 14px;
 $font-base: "Montserrat", sans-serif;
 $font-title: "Fraunces", serif;
@@ -29,7 +27,7 @@ $font-price-current: "Fraunces", serif;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-/* Colors */
+// Colors
 $green: hsl(158, 36%, 37%);
 $dark-green: hsl(158, 42%, 18%);
 $black: hsl(212, 21%, 14%);

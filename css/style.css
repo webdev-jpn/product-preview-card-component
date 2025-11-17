@@ -1,0 +1,142 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: hsl(228deg, 12%, 48%);
+}
+
+main {
+  min-height: 100vh;
+  background-color: hsl(30deg, 38%, 92%);
+  padding-top: 5.714rem;
+  padding-bottom: 12.28rem;
+  padding-right: 0.857rem;
+  padding-left: 0.928rem;
+}
+@media (min-width: 1440px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.card {
+  background-color: hsl(0deg, 0%, 100%);
+  max-width: 25rem;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0.571rem;
+}
+@media (min-width: 1440px) {
+  .card {
+    max-width: 42.85rem;
+    display: flex;
+  }
+}
+
+.card__image {
+  border-radius: 0.571rem 0.571rem 0 0;
+  overflow: hidden;
+}
+@media (min-width: 1440px) {
+  .card__image {
+    border-radius: 0.571rem 0 0 0.571rem;
+    max-width: 21.42rem;
+    width: 100%;
+  }
+}
+.card__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 1440px) {
+  .card__image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.card__body {
+  padding: 2.285rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.714rem;
+}
+@media (min-width: 1440px) {
+  .card__body {
+    max-width: 21.42rem;
+    width: 100%;
+    gap: 2.285rem;
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.714rem;
+}
+
+.card__content-category {
+  font-size: 0.857rem;
+  line-height: 1.2;
+  letter-spacing: 0.357rem;
+}
+
+.card__content-title {
+  font-size: 2.285rem;
+  font-weight: 700;
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 21%, 14%);
+  line-height: 1;
+}
+
+.card__content-text {
+  line-height: 1.58;
+  letter-spacing: 0.01rem;
+}
+
+.card__price {
+  display: flex;
+  gap: 1.142rem;
+  align-items: center;
+}
+
+.card__price-current {
+  font-weight: 700;
+  font-size: 2.285rem;
+  color: hsl(158deg, 36%, 37%);
+  font-family: "Fraunces", serif;
+  line-height: 1;
+}
+
+.card__price-old {
+  line-height: 1.2;
+  font-size: 0.928rem;
+  text-decoration: line-through;
+}
+
+.card__button {
+  background-color: hsl(158deg, 36%, 37%);
+  width: 100%;
+  padding: 1.142rem 0;
+  border-radius: 0.571rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.571rem;
+}
+.card__button:hover {
+  cursor: pointer;
+  background-color: hsl(158deg, 42%, 18%);
+}
+.card__button span {
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+}
